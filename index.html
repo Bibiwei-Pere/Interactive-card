@@ -6,7 +6,6 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="/assets/css/index.css">
-  
   <title>Frontend Mentor | Interactive card details form</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,54 +13,62 @@
 </head>
 <body>
   <div class="container">
-    <div class="wrapper">
-      <div class="card-1">
+    <div class="wrapper credit-card-container">
+      <div class="card-1 card-front">
         <img src="/images/card-logo.svg" alt="logo">
-        <h1 id="dnumber">0000 0000 0000 0000</h1>
+        <h1 class="card-front-numb"><span class="numb-1">0000</span> <span class="numb-2">0000</span> <span
+          class="numb-3">0000</span> <span class="numb-4">0000</span></h1>
         <div>
-          <p id="dname">Jane Appleseed</p><p><span id="dmonth">00</span>/<span id="dyear">00</span></p>
+          <p class="card-front-name">Jane Appleseed</p><p><span class="exp-month">00</span>/<span class="exp-year">00</span></p>
         </div>
       </div>
-      <div class="card-2">
-        <p id="dcvc">000</p>
+      <div class="card-2 card-back">
+        <p class="card-back-num">000</p>
       </div>
     </div>
-    <div class="form content">
-      <div class="wrapper-1">
-        <label for="name">Cardholder Name</label>
-        <input type="text" id="name" placeholder="e.g. Jane Appleseed">
-        <p id="errname"></p>
+    <div class="form form-state">
+      <div class="wrapper-1 user-input">
+        <label for="user-name">Cardholder Name</label>
+        <input type="text" id="user-name" maxlength="24" placeholder="e.g. Jane Appleseed">
       </div>
-      <div class="wrapper-1">
-        <label for="num">Card Number</label>
-        <input type="number" id="num" placeholder="e.g. 1234 5678 9123 0000">
-        <p id="errnum"></p>
+      <div class="wrapper-1 user-input">
+        <label for="user-card">Card Number</label>
+        <input id="user-card" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="19" placeholder="e.g. 1234 5678 9123 0000">
       </div>
       <div class="sub-wrapper">
-        <div class="sub-wrapper-1">
-            <label for="mm-yy">Exp. Date (MM/YY)</label>
-            <div id="mm-yy">
-              <input type="number" id="mm" placeholder="MM">
-              <input type="number" id="yy" placeholder="YY">
+        <div class="sub-wrapper-1 user-input">
+            <label for="date-exp-mm">Exp. Date (MM/YY)</label>
+            <div class="user-input-date">
+              <div class="date month">
+                <input id="date-exp-mm" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="2"
+                  placeholder="MM">
+              </div>
+              <div class="date year">
+                <input id="date-exp-yy" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="2"
+                  placeholder="YY">
+              </div>
             </div>
-            <p id="errmm-yy"></p>
         </div>
-        <div  class="sub-wrapper-2">
-          <label for="cvc">CVC</label>
-          <input type="number" id="cvc" placeholder="e.g. 123">
-          <p id="errcvc"></p>
+        <div  class="sub-wrapper-2 user-input">
+          <label for="user-cvc">CVC</label>
+          <input id="user-cvc" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="3" placeholder="e.g. 123">
         </div>
       </div>
-      <button class="form__subscribe" id="request">Confirm</button>
+      <button class="btn" id="btn-form">Confirm</button>
     </div>
 
     <!-- Pop up Message -->
-    <section class="container-2 notification hide">
+    <section class="container-2 completed-state-container hidden">
       <img src="/images/icon-complete.svg" alt="complete">
       <h1>THANK YOU!</h1>
       <p>We've added you card details</p>
-      <a href="./" type="submit" class="btn m-t">Continue</a>
+      <button type="submit" id="btn-completed" class="btns m-t">Continue</button>
     </section>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/Bibiwei-Pere" target="_blank">Bibiwei Pere</a>.
+    </div>
   </div>
 
 
